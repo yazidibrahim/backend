@@ -64,14 +64,14 @@ app.put('/student/:id',async (req,res)=>{
         let updatedData = {$set:item}
 
         let updatedStudent = await Studentdata.findByIdAndUpdate({'_id':id}, updatedData,{new:true})
-        res.send(updatedStudent)
+        res.send("success")
 
 
         
     } catch (error) {
 
         console.log(error)
-        res.status(5684)
+        res.status(404)
         
     }
 })
